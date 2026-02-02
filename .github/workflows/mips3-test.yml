@@ -34,9 +34,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: LuaJIT/LuaJIT-test-cleanup
-          path: LuaJIT-test-cleanup
+          path: test-suite
       
       - name: Run tests with qemu-mips64el
         run: |
-          cd LuaJIT-test-cleanup/test
-          qemu-mips64el -cpu loongson2f "$PWD/../../src/luajit" test.lua
+          cd test-suite
+          qemu-mips64el-static -cpu loongson2f ../src/luajit test/test.lua
