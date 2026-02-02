@@ -8,6 +8,8 @@ on:
 jobs:
   test-mips3:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout LuaJIT repository
