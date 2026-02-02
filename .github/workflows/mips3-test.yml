@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-mips3:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     
@@ -26,8 +26,7 @@ jobs:
           make clean
           make CROSS=mips64el-linux-gnuabi64- \
                TARGET_CFLAGS="-march=mips3" \
-               CCOPT_mips="-march=mips3" \
-               TARGET_SYS=Linux
+               CCOPT_mips="-march=mips3"
       
       - name: Checkout LuaJIT-test-cleanup
         uses: actions/checkout@v4
