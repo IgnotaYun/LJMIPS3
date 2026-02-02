@@ -36,7 +36,5 @@ jobs:
       
       - name: Run tests with qemu-mips64el
         run: |
-          export LUAJIT_BIN="$PWD/src/luajit"
-          export QEMU_CPU="loongson2f"
           cd LuaJIT-test-cleanup/test
-          qemu-mips64el -cpu loongson2f "$LUAJIT_BIN" test.lua
+          qemu-mips64el -cpu loongson2f "$PWD/../../src/luajit" test.lua
