@@ -25,7 +25,6 @@ jobs:
           cd src
           make clean
           make CROSS=mips64el-linux-gnuabi64- \
-               HOST_CC="gcc -m64" \
                TARGET_CFLAGS="-march=mips3" \
                CCOPT_mips="-march=mips3" \
                TARGET_SYS=Linux
